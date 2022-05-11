@@ -67,15 +67,22 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+ ```python
+#include <Servo.h>
+Servo servobase;
+void setup()
+  {
+  servobase.attach(A0);
+      servobase.write(0);
 
-
-
-
-
-
-
-
-
+  Serial.begin(9600);
+}
+void loop()
+{
+   int i = Serial.parseInt();  
+    servobase.write(i);
+  delay(1000);
+}
+```
 ### RESULTS: 
 Arduino uno interfacing with servo motor is learned and angular position is controlled using PWM signal.
